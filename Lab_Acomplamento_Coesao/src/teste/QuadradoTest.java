@@ -22,10 +22,12 @@ public class QuadradoTest {
 		assertEquals(16, quadrado.perimetro());
 	}
 	
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void perimetroInvalidoTest() {
 		quadrado = new Quadrado(-1233);
 		assertEquals(0, quadrado.perimetro());
+		assertFalse(-12313 == quadrado.perimetro());
 	}
+
 
 }

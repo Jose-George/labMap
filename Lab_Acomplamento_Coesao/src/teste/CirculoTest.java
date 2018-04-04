@@ -17,7 +17,7 @@ public class CirculoTest {
 		assertEquals(6, circulo.perimetro());	
 	}
 	
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void perimetroInvalidoTest() {
 		circulo = new Circulo(-1);
 		assertEquals(0, circulo.perimetro());	

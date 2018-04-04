@@ -22,7 +22,7 @@ public class RetanguloTest {
 		assertEquals(40, retangulo.perimetro());
 	}
 	
-	@Test
+	@Test (expected = IllegalArgumentException.class)
 	public void PerimetroInvalidoTest() {
 		retangulo = new Retangulo(-1030, -1032);
 		assertEquals(0, retangulo.perimetro());

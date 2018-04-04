@@ -4,19 +4,22 @@ public class Circulo implements FiguraGeometrica {
 
 	private int raio;
 	
-	public Circulo(int raio){
+	public Circulo(int raio) throws IllegalArgumentException{
+		if(raio < 0){
+			throw(new IllegalArgumentException("Ocorreu um erro, valor não esperado: insira valor maior q zero"));
+		}
 		this.raio = raio;
 	}
 	
 	@Override
-	public int perimetro() {
+	public int perimetro() throws IllegalArgumentException {
 		int perimetro = (int) 3.14 * raio;
 		if(perimetro > 0) {
 			System.out.print("Perimetro do circulo: "+perimetro);
 			System.out.println();
 			}else{
-				System.out.println("Erro");
-				return 0;
+				throw(new IllegalArgumentException("Ocorreu um erro, valor não esperado"));
+			
 			}
 		return perimetro;
 	}
